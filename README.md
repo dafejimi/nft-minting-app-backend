@@ -5,7 +5,7 @@
 
 ## **🔗 Live API**  
 - 🌍 **Deployed API**: [Live API URL](https://social-deana-dafe-6dd7000c.koyeb.app/)  
-- 📂 **Frontend Repository**: [GitHub Repo]([https://github.com/yourusername/nft-minting-frontend](https://github.com/dafejimi/nft-minting-app))  
+- 📂 **Frontend Repository**: [GitHub Repo](https://github.com/yourusername/nft-minting-frontend](https://github.com/dafejimi/nft-minting-app)  
 
 ---
 
