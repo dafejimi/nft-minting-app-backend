@@ -13,13 +13,40 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://nft-minting-app-lovat.vercel.app',
+    'http://localhost:3000'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(helmet());
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`, {
+    body: req.body,
+    params: req.params,
+    query: req.query
+  });
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.json({ message: 'NFT API is running' });
+});
 // Routes
 app.use('/api/nft', nftRoutes);
+
+app.use('*', (req, res) => {
+  res.status(404).json({
+    success: false,
+    error: 'Route not found'
+  });
+});
 
 // Error handler middleware
 const errorHandler = (err, req, res, next) => {
